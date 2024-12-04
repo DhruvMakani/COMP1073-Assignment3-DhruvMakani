@@ -20,7 +20,20 @@ body {
     overflow: hidden;
 }
 
-/* Background Decorations*/
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Background Decorations */
 .floating-element {
     position: absolute;
     border-radius: 50%;
@@ -82,4 +95,82 @@ h1 {
     margin-bottom: 20px;
     color: #ffeaa7;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form input::placeholder {
+    color: #ddd;
+}
+
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ffeaa7;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background: #ffd54f;
+    transform: scale(1.05);
+}
+
+/* Weather Output */
+#weatherOutput {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    text-align: left;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#weatherOutput h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffdf00;
+}
+
+#weatherOutput p {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+#weatherOutput p span {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
