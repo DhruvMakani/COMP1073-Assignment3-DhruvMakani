@@ -33,3 +33,15 @@ form.addEventListener("submit", async (event) => {
         weatherOutput.style.display = "block";
     }
 });
+
+// Function to display the weather data on the page
+function displayWeather(data) {
+    const { name, main, weather } = data;
+    weatherOutput.innerHTML = `
+        <h2>🌎 Weather in ${name}</h2>
+        <p><span>🌡️ Temperature:</span> ${main.temp}°C</p>
+        <p><span>💧 Humidity:</span> ${main.humidity}%</p>
+        <p><span>🌤️ Condition:</span> ${weather[0].description}</p>
+    `;
+    weatherOutput.style.display = "block"; // Make sure the weather output is visible
+}
