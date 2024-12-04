@@ -1,0 +1,85 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #3498db); /* Fallback */
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite; /* Smooth gradient animation */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Background Decorations*/
+.floating-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 10s linear infinite;
+    z-index: 1;
+}
+
+.floating-element.small {
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    animation-duration: 7s;
+}
+
+.floating-element.medium {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    animation-duration: 10s;
+}
+
+.floating-element.large {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    animation-duration: 15s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffeaa7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
